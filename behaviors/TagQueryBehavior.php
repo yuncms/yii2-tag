@@ -18,6 +18,7 @@ use yii\db\Expression;
  *
  * @package yuncms\tag
  * @see https://github.com/creocoder/yii2-taggable
+ * @author Alexander Kochetov <creocoder@gmail.com>
  */
 class TagQueryBehavior extends Behavior
 {

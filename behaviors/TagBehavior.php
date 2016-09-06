@@ -16,8 +16,9 @@ use yii\db\ActiveRecord;
  * TagBehavior
  *
  * @property ActiveRecord $owner
- * 
+ *
  * @package yuncms\tag
+ * @author Alexander Kochetov <creocoder@gmail.com>
  * @see https://github.com/creocoder/yii2-taggable
  */
 class TagBehavior extends Behavior

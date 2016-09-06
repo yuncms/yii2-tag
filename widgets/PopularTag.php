@@ -31,7 +31,7 @@ class PopularTag extends Widget
      */
     public $cache = 1;
 
-    public $class;
+    public $class = 'popular-tag';
 
     /** @inheritdoc */
     public function init()

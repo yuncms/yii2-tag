@@ -7,10 +7,10 @@ use yii\helpers\Html;
  * @var string $css
  */
 ?>
-<ul <?= !empty($class) ? 'class="' . $class . '"' : ''; ?>>
+<?= Html::beginTag('ul', ['class' => $class]); ?>
     <?php
     foreach ($tags as $tag) {
         echo Html::tag('li', Html::a($tag->name, ['/tag/tag/view', 'tag' => $tag->name], ['rel' => 'tag']));
     }
     ?>
-</ul>
+<?= Html::endTag('ul'); ?>

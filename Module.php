@@ -7,8 +7,7 @@
 namespace yuncms\tag;
 
 use Yii;
-use yii\helper\Url;
-use yii\tag\models\Tag;
+use yuncms\tag\models\Tag;
 
 
 /**

@@ -21,6 +21,15 @@ class TagQuery extends ActiveQuery
     }*/
 
     /**
+     * 标题不为空的
+     * @return $this
+     */
+    public function titleNotNull()
+    {
+        return $this->andWhere(['not', ['title' => '']]);
+    }
+
+    /**
      * @inheritdoc
      * @return Tag[]|array
      */

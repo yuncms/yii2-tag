@@ -13,6 +13,8 @@ use Overtrue\Pinyin\Pinyin;
 /**
  * Class Tag
  * @property string $name
+ * @property string $title
+ * @property string $keywords
  * @property string $description
  * @property string $pinyin
  * @property string $letter

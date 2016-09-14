@@ -32,7 +32,7 @@ class TagSearch extends Model
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('tag', 'ID'),
+            'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('tag', 'Tag'),
             'frequency' => Yii::t('tag', 'Frequency'),
         ];

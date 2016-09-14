@@ -17,12 +17,11 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Frequency' => '',
-    'ID' => '',
-    'Keyword' => '',
-    'Letter' => '',
-    'Pinyin' => '',
+    'Frequency' => '热度',
+    'Keyword' => '关键词',
+    'Letter' => '首字母',
+    'Pinyin' => '拼音',
     'Tag' => '',
-    'Tags' => '',
-    'Title' => '',
+    'Tags' => 'Tag',
+    'Title' => '标题',
 ];

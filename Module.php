@@ -32,6 +32,8 @@ use yuncms\tag\models\Tag;
 class Module extends \yii\base\Module
 {
 
+    public $controllerNamespace = 'yuncms\tag\controllers';
+
     public $defaultRoute = 'tag';
 
     /**

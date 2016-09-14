@@ -45,7 +45,6 @@ class PopularTag extends Widget
     /** @inheritdoc */
     public function run()
     {
-        //首页显示排行榜
         $tags = Tag::getDb()->cache(function ($db) {
             return Tag::find()->orderBy(['frequency' => SORT_DESC])->limit($this->limit)->all();
         }, $this->cache);

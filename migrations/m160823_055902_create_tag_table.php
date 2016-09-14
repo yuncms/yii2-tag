@@ -21,7 +21,7 @@ class m160823_055902_create_tag_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'title' => $this->string(),
-            'keyword' => $this->text(),
+            'keywords' => $this->text(),
             'description' => $this->text(),
             'pinyin' => $this->string(),
             'letter' => $this->string(1),

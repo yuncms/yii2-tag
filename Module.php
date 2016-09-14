@@ -34,7 +34,7 @@ class Module extends \yii\base\Module
 
     public $controllerNamespace = 'yuncms\tag\controllers';
 
-    public $defaultRoute = 'tag';
+    public $defaultRoute = 'default';
 
     /**
      * @inheritdoc

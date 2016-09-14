@@ -15,5 +15,16 @@ use yii\web\Controller;
  */
 class DefaultController extends Controller
 {
-
+    /**
+     * @return array
+     */
+    public function actions()
+    {
+        return [
+            'auto-complete' => [
+                'class' => 'yuncms\tag\actions\AutoCompleteAction',
+                'clientIdGetParamName' => 'query'
+            ]
+        ];
+    }
 }

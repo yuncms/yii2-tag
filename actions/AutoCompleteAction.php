@@ -33,10 +33,18 @@ class AutoCompleteAction extends Action
 
     public $clientIdGetParamName = 'query';
 
+    /**
+     * @return array
+     */
     public function run()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
-        $rows = Tag::find()->select(['id', 'name', 'frequency'])->where(['like', 'name', Yii::$app->request->get($this->clientIdGetParamName)])->orderBy(['frequency' => SORT_DESC])->asArray()->all();
+        $query = Tag::find();
+        $rows = $query->select(['id', 'name', 'frequency'])
+            ->where(['like', 'name', Yii::$app->request->get($this->clientIdGetParamName)])
+            ->orderBy(['frequency' => SORT_DESC])
+            ->asArray()
+            ->all();
         return $rows;
     }
 }

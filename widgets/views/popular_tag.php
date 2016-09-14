@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /**
  * @var \yuncms\tag\models\Tag $tags
- * @var string $css
+ * @var string $class
  */
 ?>
 <?= Html::beginTag('ul', ['class' => $class]); ?>

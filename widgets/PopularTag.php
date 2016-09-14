@@ -29,7 +29,7 @@ class PopularTag extends Widget
     /**
      * @var int 缓存时间
      */
-    public $cache = 1;
+    public $cache = 600;
 
     public $class = 'popular-tag';
 

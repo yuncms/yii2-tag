@@ -29,6 +29,7 @@ class TagQueryBehavior extends Behavior
      */
     public function anyTagValues($values, $attribute = null)
     {
+        /** @var \yii\db\ActiveRecord $model */
         $model = new $this->owner->modelClass();
         $tagClass = $model->getRelation($model->tagRelation)->modelClass;
 

@@ -8,6 +8,10 @@ namespace yuncms\tag\controllers;
 
 use Yii;
 use yii\web\Controller;
+use yii\helpers\Url;
+use yii\data\ActiveDataProvider;
+use yii\web\NotFoundHttpException;
+use yuncms\tag\models\Tag;
 
 /**
  * Class DefaultController
@@ -26,5 +30,34 @@ class DefaultController extends Controller
                 'clientIdGetParamName' => 'query'
             ]
         ];
+    }
+
+    /**
+     * 标签首页
+     * @return string
+     */
+    public function actionIndex()
+    {
+        Url::remember('', 'actions-redirect');
+        $dataProvider = new ActiveDataProvider([
+            'query' => Tag::find(),
+        ]);
+        return $this->render('list', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * @param string $name
+     * @return null|static
+     * @throws NotFoundHttpException
+     */
+    public function findModel($name)
+    {
+        if (($model = Tag::findOne(['name' => $name])) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 }

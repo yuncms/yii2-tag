@@ -12,8 +12,8 @@
 return [
     'color' => null,
     'interactive' => true,
-    'sourcePath' => __DIR__,
-    'messagePath' => __DIR__ . '/messages',
+    'sourcePath' => __DIR__ . '/../',
+    'messagePath' => __DIR__,
     'languages' => ['zh-CN'],
     'translator' => 'Yii::t',
     'sort' => false,

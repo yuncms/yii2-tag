@@ -1,6 +1,6 @@
 {
   "name": "yuncms/yii2-tag",
-  "description": "The tag module for the yii framework",
+  "description": "The tag extension for the yii framework",
   "keywords": [
     "yuncms",
     "taggable",

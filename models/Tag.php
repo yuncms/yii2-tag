@@ -37,8 +37,10 @@ class Tag extends ActiveRecord
     {
         return [
             ['name', 'required'],
+            [['name', 'title', 'pinyin'], 'string', 'max' => 255],
+            ['letter', 'string', 'max' => 1],
+            [['keywords', 'description'], 'safe'],
             [['frequency'], 'integer'],
-            [['name'], 'string', 'max' => 255],
             ['frequency', 'default', 'value' => 0],
         ];
     }

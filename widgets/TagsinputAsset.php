@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class TagsinputAsset extends AssetBundle
 {
-    public $basePath = '@vendor/yuncms/yii2-tag/assets';
+    public $sourcePath = '@vendor/yuncms/yii2-tag/assets';
 
     public $css = [
         'bootstrap-tagsinput.css',

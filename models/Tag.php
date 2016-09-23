@@ -42,7 +42,8 @@ class Tag extends ActiveRecord
         return [
             ['name', 'required'],
             ['name', 'match', 'pattern' => static::$nameRegexp],
-            [['name', 'title', 'pinyin'], 'string', 'max' => 255],
+            ['name', 'string', 'min' => 2, 'max' => 50],
+            [['title', 'pinyin'], 'string', 'max' => 255],
             ['letter', 'string', 'max' => 1],
             [['keywords', 'description'], 'safe'],
             [['frequency'], 'integer'],

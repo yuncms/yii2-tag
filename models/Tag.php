@@ -22,6 +22,10 @@ use Overtrue\Pinyin\Pinyin;
  */
 class Tag extends ActiveRecord
 {
+
+    /** @var string Default name regexp */
+    public static $nameRegexp = '/^[\w._-\x80-\xff\#\+]+$/';
+
     /**
      * @inheritdoc
      */
@@ -37,6 +41,7 @@ class Tag extends ActiveRecord
     {
         return [
             ['name', 'required'],
+            ['name', 'match', 'pattern' => static::$nameRegexp],
             [['name', 'title', 'pinyin'], 'string', 'max' => 255],
             ['letter', 'string', 'max' => 1],
             [['keywords', 'description'], 'safe'],

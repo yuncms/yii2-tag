@@ -23,7 +23,7 @@ use Overtrue\Pinyin\Pinyin;
 class Tag extends ActiveRecord
 {
     /** @var string Default name regexp */
-    public static $nameRegexp = "/^[\w._-\x{4e00}-\x{9fa5}\#\+]+$/u";
+    public static $nameRegexp = '/^[\w._-\x{4e00}-\x{9fa5}\#\+]+$/u';
     // for gbk
     //public static $nameRegexp = '/^[\w._-\x80-\xff\#\+]+$/';
 

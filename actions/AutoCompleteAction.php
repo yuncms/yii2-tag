@@ -33,6 +33,8 @@ class AutoCompleteAction extends Action
 
     public $clientIdGetParamName = 'query';
 
+	public $clientLimitGetParamName = 100;
+
     /**
      * @return array
      */
@@ -43,6 +45,7 @@ class AutoCompleteAction extends Action
         $rows = $query->select(['id', 'name', 'frequency'])
             ->where(['like', 'name', Yii::$app->request->get($this->clientIdGetParamName)])
             ->orderBy(['frequency' => SORT_DESC])
+			->limit(Yii::$app->request->get($this->clientLimitGetParamName),100)
             ->asArray()
             ->all();
         return $rows;

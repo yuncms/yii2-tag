@@ -43,10 +43,10 @@ class AutoCompleteAction extends Action
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
         $query = Tag::find();
-        $rows = $query->select(['id', 'name', 'frequency'])
+        $rows = $query->select(['id', 'name', 'name as text', 'frequency'])
             ->where(['like', 'name', Yii::$app->request->get($this->clientIdGetParamName)])
             ->orderBy(['frequency' => SORT_DESC])
-            ->limit(Yii::$app->request->get($this->clientLimitGetParamName,100))
+            ->limit(Yii::$app->request->get($this->clientLimitGetParamName, 100))
             ->asArray()
             ->all();
         return $rows;

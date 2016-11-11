@@ -1,13 +1,10 @@
 <?php
 
+namespace yuncms\tag\migrations;
+
 use yii\db\Migration;
 
-use common\models\Tag;
-
-/**
- * Handles the creation for table `tag`.
- */
-class m160823_055902_create_tag_table extends Migration
+class M161111091214Create_tag_table extends Migration
 {
     public function up()
     {
@@ -33,4 +30,15 @@ class m160823_055902_create_tag_table extends Migration
     {
         $this->dropTable('{{%tag}}');
     }
+
+    /*
+    // Use safeUp/safeDown to run migration code within a transaction
+    public function safeUp()
+    {
+    }
+
+    public function safeDown()
+    {
+    }
+    */
 }

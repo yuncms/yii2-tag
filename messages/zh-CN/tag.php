@@ -21,7 +21,7 @@ return [
     'Keyword' => '关键词',
     'Letter' => '首字母',
     'Pinyin' => '拼音',
-    'Tag' => '',
+    'Tag' => '标签',
     'Tags' => 'Tag',
     'Title' => '标题',
 ];

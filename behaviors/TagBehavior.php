@@ -155,12 +155,17 @@ class TagBehavior extends Behavior
         $rows = [];
 
         foreach ($this->_tagValues as $value) {
+
             /* @var ActiveRecord $tag */
             $tag = $class::findOne([$this->tagValueAttribute => $value]);
 
             if ($tag === null) {
                 $tag = new $class();
-                $tag->setAttribute($this->tagValueAttribute, $value);
+                if (is_string($value)) {//如果这个是字符串
+                    $tag->setAttribute('name', $value);
+                } else {
+                    $tag->setAttribute($this->tagValueAttribute, $value);
+                }
             }
 
             if ($this->tagFrequencyAttribute !== false) {

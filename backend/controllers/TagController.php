@@ -5,11 +5,11 @@ namespace yuncms\tag\backend\controllers;
 use Yii;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
-use common\models\Tag;
-use backend\models\TagSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yuncms\tag\models\Tag;
+use yuncms\tag\models\TagSearch;
 
 /**
  * TagController implements the CRUD actions for Tag model.

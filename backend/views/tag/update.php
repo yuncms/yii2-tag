@@ -6,8 +6,8 @@ use yuncms\admin\widgets\Jarvis;
 /* @var $this yii\web\View */
 /* @var $model yuncms\tag\models\Tag */
 
-$this->title = Yii::t('tag/tag', 'Update Tag') . ': ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('tag/tag', 'Manage Tag'), 'url' => ['index']];
+$this->title = Yii::t('tag', 'Update Tag') . ': ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('tag', 'Manage Tag'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
@@ -20,12 +20,12 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
                 'header' => Html::encode($this->title),
                 'bodyToolbarActions' => [
                     [
-                        'label' => Yii::t('tag/tag', 'Manage Tag'),
-                        'url' => ['tag/index'],
+                        'label' => Yii::t('tag', 'Manage Tag'),
+                        'url' => ['index'],
                     ],
                     [
-                        'label' => Yii::t('tag/tag', 'Create Tag'),
-                        'url' => ['tag/create'],
+                        'label' => Yii::t('tag', 'Create Tag'),
+                        'url' => ['create'],
                     ],
                 ]
             ]); ?>

@@ -8,7 +8,7 @@ use yuncms\admin\widgets\Jarvis;
 /* @var $model yuncms\tag\models\Tag */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('tag/tag', 'Manage Tag'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('tag', 'Manage Tag'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section id="widget-grid">
@@ -21,20 +21,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'header' => Html::encode($this->title),
                 'bodyToolbarActions' => [
                     [
-                        'label' => Yii::t('tag/tag', 'Manage Tag'),
+                        'label' => Yii::t('tag', 'Manage Tag'),
                         'url' => ['tag/index'],
                     ],
                     [
-                        'label' => Yii::t('tag/tag', 'Create Tag'),
+                        'label' => Yii::t('tag', 'Create Tag'),
                         'url' => ['tag/create'],
                     ],
                     [
-                        'label' => Yii::t('tag/tag', 'Update Tag'),
+                        'label' => Yii::t('tag', 'Update Tag'),
                         'url' => ['update', 'id' => $model->id],
                         'options' => ['class' => 'btn btn-primary btn-sm']
                     ],
                     [
-                        'label' => Yii::t('tag/tag', 'Delete Tag'),
+                        'label' => Yii::t('tag', 'Delete Tag'),
                         'url' => ['delete', 'id' => $model->id],
                         'options' => [
                             'class' => 'btn btn-danger btn-sm',

@@ -17,11 +17,15 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Description' => '描述',
+    'Title' => '标题',
+    'Create Tag' => '创建Tag',
+    'Delete Tag' => '删除Tag',
     'Frequency' => '热度',
     'Keyword' => '关键词',
     'Letter' => '首字母',
+    'Manage Tag' => 'Tag管理',
     'Pinyin' => '拼音',
     'Tag' => '标签',
-    'Tags' => 'Tag',
-    'Title' => '标题',
+    'Update Tag' => '更新Tag',
 ];

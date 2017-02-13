@@ -8,7 +8,7 @@ use yuncms\admin\widgets\Jarvis;
 /* @var $searchModel yuncms\tag\models\TagSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('tag/tag', 'Manage Tag');
+$this->title = Yii::t('tag', 'Manage Tag');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section id="widget-grid">
@@ -21,12 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'header' => Html::encode($this->title),
                 'bodyToolbarActions' => [
                     [
-                        'label' => Yii::t('tag/tag', 'Manage Tag'),
-                        'url' => ['tag/index'],
+                        'label' => Yii::t('tag', 'Manage Tag'),
+                        'url' => ['index'],
                     ],
                     [
-                        'label' => Yii::t('tag/tag', 'Create Tag'),
-                        'url' => ['tag/create'],
+                        'label' => Yii::t('tag', 'Create Tag'),
+                        'url' => ['create'],
                     ],
                 ]
             ]); ?>

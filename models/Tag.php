@@ -60,9 +60,9 @@ class Tag extends ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('tag', 'Tag'),
-            'title' => Yii::t('app', 'Title'),
+            'title' => Yii::t('tag', 'Title'),
             'keywords' => Yii::t('tag', 'Keyword'),
-            'description' => Yii::t('app', 'Description'),
+            'description' => Yii::t('tag', 'Description'),
             'frequency' => Yii::t('tag', 'Frequency'),
             'pinyin' => Yii::t('tag', 'Pinyin'),
             'letter' => Yii::t('tag', 'Letter'),

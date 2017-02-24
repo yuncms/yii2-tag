@@ -28,4 +28,6 @@ return [
     'Pinyin' => '拼音',
     'Tag' => '标签',
     'Update Tag' => '更新Tag',
+    'More' => '更多',
+    'Hot Topic' => '热门标签',
 ];

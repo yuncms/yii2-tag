@@ -161,11 +161,7 @@ class TagBehavior extends Behavior
 
             if ($tag === null) {
                 $tag = new $class();
-                if (is_string($value)) {//如果这个是字符串
-                    $tag->setAttribute('name', $value);
-                } else {
-                    $tag->setAttribute($this->tagValueAttribute, $value);
-                }
+                $tag->setAttribute($this->tagValueAttribute, $value);
             }
 
             if ($this->tagFrequencyAttribute !== false) {

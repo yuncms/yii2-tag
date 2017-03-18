@@ -23,21 +23,22 @@ use yii\db\ActiveRecord;
 class TagBehavior extends Behavior
 {
     /**
-     * @var boolean whether to return tags as array instead of string
+     * @var boolean 是否将标签作为数组而不是字符串返回
      */
     public $tagValuesAsArray = false;
     /**
-     * @var string the tags relation name
+     * @var string tags关系名称
      */
     public $tagRelation = 'tags';
     /**
-     * @var string the tags model value attribute name
+     * @var string tag模型内标签值的字段
      */
     public $tagValueAttribute = 'name';
     /**
-     * @var string|false the tags model frequency attribute name
+     * @var string|false tag模型标签热度字段，false不使用
      */
     public $tagFrequencyAttribute = 'frequency';
+    
     /**
      * @var string[]
      */

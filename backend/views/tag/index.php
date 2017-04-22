@@ -34,13 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]]); ?>
                 </div>
                 <div class="col-sm-8 m-b-xs">
-
+                    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
                 </div>
             </div>
             <?= GridView::widget([
                 'layout' => "{items}\n{summary}\n{pager}",
                 'dataProvider' => $dataProvider,
-                'filterModel' => $searchModel,
+                //'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'id',

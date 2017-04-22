@@ -11,21 +11,18 @@ use xutl\inspinia\ActiveForm;
 <div class="tag-search pull-right">
 
     <?php $form = ActiveForm::begin([
+        'layout' => 'inline',
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-
-    <?= $form->field($model, 'id', [
-        'inputOptions' => [
-            'placeholder' => $model->getAttributeLabel('id'),
-        ],
-    ]) ?>
 
     <?= $form->field($model, 'name', [
         'inputOptions' => [
             'placeholder' => $model->getAttributeLabel('name'),
         ],
     ]) ?>
+
+
 
 <!--    --><?//= $form->field($model, 'description', [
 //        'inputOptions' => [
@@ -39,11 +36,7 @@ use xutl\inspinia\ActiveForm;
 //        ],
 //    ]) ?>
 
-    <?= $form->field($model, 'letter', [
-        'inputOptions' => [
-            'placeholder' => $model->getAttributeLabel('letter'),
-        ],
-    ]) ?>
+
 
     <?php // echo $form->field($model, 'frequency') ?>
 

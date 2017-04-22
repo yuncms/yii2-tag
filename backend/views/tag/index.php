@@ -2,7 +2,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yuncms\admin\widgets\Jarvis;
+use xutl\inspinia\Box;
+use xutl\inspinia\Toolbar;
+use xutl\inspinia\Alert;
 
 /* @var $this yii\web\View */
 /* @var $searchModel yuncms\tag\models\TagSearch */
@@ -11,26 +13,32 @@ use yuncms\admin\widgets\Jarvis;
 $this->title = Yii::t('tag', 'Manage Tag');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<section id="widget-grid">
+<div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <?php $w = Jarvis::begin([
-                'noPadding' => true,
-                'editbutton' => false,
-                'deletebutton' => false,
+        <div class="col-lg-12 tag-update">
+            <?= Alert::widget() ?>
+            <?php Box::begin([
                 'header' => Html::encode($this->title),
-                'bodyToolbarActions' => [
-                    [
-                        'label' => Yii::t('tag', 'Manage Tag'),
-                        'url' => ['index'],
-                    ],
-                    [
-                        'label' => Yii::t('tag', 'Create Tag'),
-                        'url' => ['create'],
-                    ],
-                ]
             ]); ?>
+            <div class="row">
+                <div class="col-sm-4 m-b-xs">
+                    <?= Toolbar::widget(['items' => [
+                        [
+                            'label' => Yii::t('tag', 'Manage Tag'),
+                            'url' => ['index'],
+                        ],
+                        [
+                            'label' => Yii::t('tag', 'Create Tag'),
+                            'url' => ['create'],
+                        ],
+                    ]]); ?>
+                </div>
+                <div class="col-sm-8 m-b-xs">
+
+                </div>
+            </div>
             <?= GridView::widget([
+                'layout' => "{items}\n{summary}\n{pager}",
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
                 'columns' => [
@@ -43,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['class' => 'yii\grid\ActionColumn', 'header' => Yii::t('app', 'Operation'),],
                 ],
             ]); ?>
-            <?php Jarvis::end(); ?>
-        </article>
+            <?php Box::end(); ?>
+        </div>
     </div>
-</section>
+</div>

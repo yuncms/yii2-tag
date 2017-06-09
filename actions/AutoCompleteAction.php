@@ -4,11 +4,13 @@
  * @copyright Copyright (c) 2012 TintSoft Technology Co. Ltd.
  * @license http://www.tintsoft.com/license/
  */
+
 namespace yuncms\tag\actions;
 
 use Yii;
 use yii\base\Action;
 use yii\web\Response;
+use yii\base\InvalidConfigException;
 use yuncms\tag\models\Tag;
 
 /**
@@ -27,28 +29,43 @@ use yuncms\tag\models\Tag;
  * }
  * ```
  *
- * @package Leaps\Tag
+ * @package yuncms\tag
  */
 class AutoCompleteAction extends Action
 {
-
+    /**
+     * @var string
+     */
     public $clientIdGetParamName = 'query';
 
+    /**
+     * @var string
+     */
     public $clientLimitGetParamName = 'limit';
 
     /**
-     * @return array
+     * 获取Tag
+     * @return array|Tag[]
+     * @throws InvalidConfigException
      */
     public function run()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
-        $query = Tag::find();
-        $rows = $query->select(['id', 'name', 'name as text', 'frequency'])
-            ->where(['like', 'name', Yii::$app->request->get($this->clientIdGetParamName)])
-            ->orderBy(['frequency' => SORT_DESC])
-            ->limit(Yii::$app->request->get($this->clientLimitGetParamName, 100))
-            ->asArray()
-            ->all();
-        return $rows;
+        $param = Yii::$app->request->get($this->clientIdGetParamName);
+        if (mb_strlen($param) < 2) {
+            if (YII_DEBUG) {
+                throw new InvalidConfigException ("Operator '{$this->clientIdGetParamName}' requires two operands.");
+            }
+        } else {
+            $query = Tag::find();
+            $rows = $query->select(['id', 'name', 'name as text', 'frequency'])
+                ->where(['like', 'name', $param])
+                ->orderBy(['frequency' => SORT_DESC])
+                ->limit(Yii::$app->request->get($this->clientLimitGetParamName, 20))
+                ->asArray()
+                ->all();
+            return $rows;
+        }
+
     }
 }

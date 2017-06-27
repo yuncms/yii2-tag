@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2012 TintSoft Technology Co. Ltd.
  * @license http://www.tintsoft.com/license/
  */
+
 namespace yuncms\tag\models;
 
 use Yii;
@@ -45,7 +46,7 @@ class TagSearch extends Model
      */
     public function search($params)
     {
-        $query = Tag::find();
+        $query = Tag::find()->orderBy(['id' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

@@ -55,6 +55,8 @@ class AutoCompleteAction extends Action
         if (mb_strlen($param) < 2) {
             if (YII_DEBUG) {
                 throw new InvalidConfigException ("Operator '{$this->clientIdGetParamName}' requires two operands.");
+            } else {
+                return [];
             }
         } else {
             $query = Tag::find();

@@ -8,7 +8,7 @@
     "tag"
   ],
   "type": "yii2-extension",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "require": {
     "yiisoft/yii2": "~2.0",
     "overtrue/pinyin": "~3.0"

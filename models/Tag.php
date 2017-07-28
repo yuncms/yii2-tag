@@ -9,6 +9,7 @@ namespace yuncms\tag\models;
 use Yii;
 use yii\db\ActiveRecord;
 use Overtrue\Pinyin\Pinyin;
+use yii\helpers\Inflector;
 
 /**
  * Class Tag
@@ -16,7 +17,7 @@ use Overtrue\Pinyin\Pinyin;
  * @property string $title
  * @property string $keywords
  * @property string $description
- * @property string $pinyin
+ * @property string $slug
  * @property string $letter
  * @property int $frequency
  */
@@ -24,6 +25,7 @@ class Tag extends ActiveRecord
 {
     /** @var string Default name regexp */
     public static $nameRegexp = '/^[\x{4e00}-\x{9fa5}\w\+\.\-#]+$/u';
+
     // for gbk
     //public static $nameRegexp = '/^[\w._-\x80-\xff\#\+]+$/';
 
@@ -44,7 +46,7 @@ class Tag extends ActiveRecord
             ['name', 'required'],
             ['name', 'match', 'pattern' => static::$nameRegexp],
             ['name', 'string', 'min' => 2, 'max' => 50],
-            [['title', 'pinyin'], 'string', 'max' => 255],
+            [['title', 'slug'], 'string', 'max' => 255],
             ['letter', 'string', 'max' => 1],
             [['keywords', 'description'], 'safe'],
             [['frequency'], 'integer'],
@@ -64,7 +66,7 @@ class Tag extends ActiveRecord
             'keywords' => Yii::t('tag', 'Keyword'),
             'description' => Yii::t('tag', 'Description'),
             'frequency' => Yii::t('tag', 'Frequency'),
-            'pinyin' => Yii::t('tag', 'Pinyin'),
+            'slug' => Yii::t('tag', 'Slug'),
             'letter' => Yii::t('tag', 'Letter'),
         ];
     }
@@ -72,12 +74,11 @@ class Tag extends ActiveRecord
     /** @inheritdoc */
     public function beforeSave($insert)
     {
-        if (empty($this->pinyin)) {
-            $py = new Pinyin();
-            $this->pinyin = strtolower($py->permalink($this->name, ''));
-        }
+        if (empty($this->slug)) {
+        $this->slug = Inflector::slug($this->name,'');
+    }
         if (empty($this->letter)) {
-            $this->letter = strtoupper(substr($this->pinyin, 0, 1));
+            $this->letter = strtoupper(substr($this->slug, 0, 1));
         }
         return parent::beforeSave($insert);
     }

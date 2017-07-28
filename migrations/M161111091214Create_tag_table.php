@@ -20,7 +20,7 @@ class M161111091214Create_tag_table extends Migration
             'title' => $this->string(),
             'keywords' => $this->string(),
             'description' => $this->text(),
-            'pinyin' => $this->string(),
+            'slug' => $this->string()->comment('标识'),
             'letter' => $this->string(1),
             'frequency' => $this->integer()->notNull()->defaultValue(0),
         ], $tableOptions);

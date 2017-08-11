@@ -22,14 +22,14 @@ use xutl\inspinia\ActiveForm;
 <div class="hr-line-dashed"></div>
 <?= $form->field($model, 'description')->textarea() ?>
 <div class="hr-line-dashed"></div>
-<?= $form->field($model, 'pinyin')->textInput() ?>
+<?= $form->field($model, 'slug')->textInput() ?>
 <div class="hr-line-dashed"></div>
 <?= $form->field($model, 'letter')->textInput() ?>
 <div class="hr-line-dashed"></div>
 
 <div class="form-group">
     <div class="col-sm-4 col-sm-offset-2">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('tag', 'Create') : Yii::t('tag', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 
     </div>
 </div>

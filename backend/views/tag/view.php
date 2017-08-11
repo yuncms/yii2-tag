@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title',
                     'keywords',
                     'description',
-                    'pinyin',
+                    'slug',
                     'letter',
                     'frequency',
                 ],

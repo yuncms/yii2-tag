@@ -45,10 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['class' => 'yii\grid\SerialColumn'],
                     'id',
                     'name',
-                    'pinyin',
+                    'slug',
                     'letter',
                     'frequency',
-                    ['class' => 'yii\grid\ActionColumn', 'header' => Yii::t('app', 'Operation'),],
+                    ['class' => 'yii\grid\ActionColumn', 'header' => Yii::t('tag', 'Operation'),],
                 ],
             ]); ?>
             <?php Box::end(); ?>

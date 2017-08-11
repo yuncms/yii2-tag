@@ -17,17 +17,22 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Description' => '描述',
-    'Title' => '标题',
+    'Create' => '创建',
+    'Reset' => '重置',
+    'Search' => '搜索',
+    'Update' => '更新',
     'Create Tag' => '创建Tag',
     'Delete Tag' => '删除Tag',
+    'Description' => '描述',
     'Frequency' => '热度',
+    'Hot Topic' => '热门标签',
     'Keyword' => '关键词',
     'Letter' => '首字母',
     'Manage Tag' => 'Tag管理',
-    'Pinyin' => '拼音',
-    'Tag' => '标签',
-    'Update Tag' => '更新Tag',
     'More' => '更多',
-    'Hot Topic' => '热门标签',
+    'Operation' => '操作',
+    'Slug' => '标识',
+    'Tag' => '标签',
+    'Title' => '标题',
+    'Update Tag' => '更新Tag',
 ];

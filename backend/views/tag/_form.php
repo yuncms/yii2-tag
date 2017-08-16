@@ -30,7 +30,6 @@ use xutl\inspinia\ActiveForm;
 <div class="form-group">
     <div class="col-sm-4 col-sm-offset-2">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('tag', 'Create') : Yii::t('tag', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-
     </div>
 </div>
 <?php ActiveForm::end(); ?>

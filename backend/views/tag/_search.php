@@ -23,18 +23,17 @@ use xutl\inspinia\ActiveForm;
     ]) ?>
 
 
+    <!--    --><? //= $form->field($model, 'description', [
+    //        'inputOptions' => [
+    //            'placeholder' => $model->getAttributeLabel('route'),
+    //        ],
+    //    ]) ?>
 
-<!--    --><?//= $form->field($model, 'description', [
-//        'inputOptions' => [
-//            'placeholder' => $model->getAttributeLabel('route'),
-//        ],
-//    ]) ?>
-
-<!--    --><?//= $form->field($model, 'pinyin', [
-//        'inputOptions' => [
-//            'placeholder' => $model->getAttributeLabel('route'),
-//        ],
-//    ]) ?>
+    <!--    --><? //= $form->field($model, 'slug', [
+    //        'inputOptions' => [
+    //            'placeholder' => $model->getAttributeLabel('slug'),
+    //        ],
+    //    ]) ?>
 
 
 

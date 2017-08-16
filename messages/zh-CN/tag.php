@@ -17,10 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Create' => '创建',
     'Reset' => '重置',
     'Search' => '搜索',
-    'Update' => '更新',
+    'Create' => '创建',
     'Create Tag' => '创建Tag',
     'Delete Tag' => '删除Tag',
     'Description' => '描述',
@@ -33,6 +32,8 @@ return [
     'Operation' => '操作',
     'Slug' => '标识',
     'Tag' => '标签',
+    'This name has already been taken' => '该名称已被使用',
     'Title' => '标题',
+    'Update' => '更新',
     'Update Tag' => '更新Tag',
 ];

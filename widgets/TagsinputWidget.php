@@ -10,7 +10,7 @@ namespace yuncms\tag\widgets;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
-
+use xutl\bootstrap\tagsinput\TagsinputAsset;
 
 /**
  * The leaps-tagsinput is a leaps 3 wrapper for bootstrap-tagsinput.

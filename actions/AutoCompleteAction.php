@@ -68,6 +68,5 @@ class AutoCompleteAction extends Action
                 ->all();
             return $rows;
         }
-
     }
 }

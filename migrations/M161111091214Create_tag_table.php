@@ -17,10 +17,10 @@ class M161111091214Create_tag_table extends Migration
         $this->createTable('{{%tag}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string(50)->notNull()->unique(),
-            'title' => $this->string(),
-            'keywords' => $this->string(),
+            'title' => $this->string(150),
+            'keywords' => $this->string(255),
             'description' => $this->text(),
-            'slug' => $this->string(),
+            'slug' => $this->string(80),
             'letter' => $this->string(1),
             'frequency' => $this->integer()->notNull()->defaultValue(0),
         ], $tableOptions);

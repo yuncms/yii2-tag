@@ -61,7 +61,7 @@ class Tag extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
+            'id' => Yii::t('tag', 'ID'),
             'name' => Yii::t('tag', 'Tag'),
             'title' => Yii::t('tag', 'Title'),
             'keywords' => Yii::t('tag', 'Keyword'),

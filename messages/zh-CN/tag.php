@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'ID' => '',
     'Reset' => '重置',
     'Search' => '搜索',
     'Create' => '创建',

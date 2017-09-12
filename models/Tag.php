@@ -9,6 +9,7 @@ namespace yuncms\tag\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 
 /**
@@ -23,11 +24,27 @@ use yii\helpers\Inflector;
  */
 class Tag extends ActiveRecord
 {
+    const SCENARIO_CREATE = 'create';
+
+    const SCENARIO_UPDATE = 'update';
+
     /** @var string Default name regexp */
     public static $nameRegexp = '/^[\x{4e00}-\x{9fa5}\w\+\.\-#]+$/u';
 
     // for gbk
     //public static $nameRegexp = '/^[\w._-\x80-\xff\#\+]+$/';
+
+    /**
+     * @inheritdoc
+     */
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        return ArrayHelper::merge($scenarios, [
+            'create' => ['name'],
+            'update' => ['name'],
+        ]);
+    }
 
     /**
      * @inheritdoc
@@ -43,7 +60,7 @@ class Tag extends ActiveRecord
     public function rules()
     {
         return [
-            ['name', 'required'],
+            ['name', 'required', 'on' => [self::SCENARIO_CREATE, self::SCENARIO_UPDATE]],
             ['name', 'match', 'pattern' => static::$nameRegexp],
             ['name', 'string', 'min' => 2, 'max' => 50],
             ['name', 'unique', 'message' => Yii::t('tag', 'This name has already been taken')],

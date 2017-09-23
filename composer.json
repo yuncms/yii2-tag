@@ -29,7 +29,6 @@
       },
       "migrationNamespace": "@yuncms/tag/migrations",
       "backend": {
-        "class": "yuncms\\tag\\backend\\Module"
       },
       "frontend": {
       }

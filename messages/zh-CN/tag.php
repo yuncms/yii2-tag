@@ -17,9 +17,10 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Create success.' => '创建成功',
+    'Delete success.' => '删除成功',
     'ID' => '',
-    'Reset' => '重置',
-    'Search' => '搜索',
+    'Update success.' => '更新成功',
     'Create' => '创建',
     'Create Tag' => '创建Tag',
     'Delete Tag' => '删除Tag',
@@ -31,6 +32,8 @@ return [
     'Manage Tag' => 'Tag管理',
     'More' => '更多',
     'Operation' => '操作',
+    'Reset' => '重置',
+    'Search' => '搜索',
     'Slug' => '标识',
     'Tag' => '标签',
     'This name has already been taken' => '该名称已被使用',

@@ -52,10 +52,10 @@ class Tag extends ActiveRecord
                 return Inflector::slug($event->sender->name,'');
             }
         ];
-        $behaviors['slug'] = [
+        $behaviors['letter'] = [
             'class' => AttributeBehavior::className(),
             'attributes' => [
-                ActiveRecord::EVENT_BEFORE_INSERT => ['slug']
+                ActiveRecord::EVENT_BEFORE_INSERT => ['letter']
             ],
             'value' => function ($event) {
                 return strtoupper(substr($event->sender->slug, 0, 1));
@@ -110,11 +110,11 @@ class Tag extends ActiveRecord
         return [
             'id' => Yii::t('tag', 'ID'),
             'name' => Yii::t('tag', 'Tag'),
+            'slug' => Yii::t('tag', 'Slug'),
             'title' => Yii::t('tag', 'Title'),
             'keywords' => Yii::t('tag', 'Keyword'),
             'description' => Yii::t('tag', 'Description'),
             'frequency' => Yii::t('tag', 'Frequency'),
-            'slug' => Yii::t('tag', 'Slug'),
             'letter' => Yii::t('tag', 'Letter'),
         ];
     }

@@ -4,10 +4,10 @@ namespace yuncms\tag\backend\controllers;
 
 use Yii;
 use yii\web\Response;
-use yii\widgets\ActiveForm;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
+use yii\widgets\ActiveForm;
 use yii\filters\VerbFilter;
+use yii\web\NotFoundHttpException;
 use yuncms\tag\models\Tag;
 use yuncms\tag\models\TagSearch;
 
@@ -16,12 +16,6 @@ use yuncms\tag\models\TagSearch;
  */
 class TagController extends Controller
 {
-    public function init()
-    {
-        parent::init();
-        $this->setViewPath('@yuncms/tag/backend/views/tag');
-    }
-
     /**
      * @inheritdoc
      */
@@ -77,7 +71,7 @@ class TagController extends Controller
             return ActiveForm::validate($model);
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Create success.'));
+            Yii::$app->getSession()->setFlash('success', Yii::t('tag', 'Create success.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -100,7 +94,7 @@ class TagController extends Controller
             return ActiveForm::validate($model);
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Update success.'));
+            Yii::$app->getSession()->setFlash('success', Yii::t('tag', 'Update success.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -118,7 +112,7 @@ class TagController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-        Yii::$app->getSession()->setFlash('success', Yii::t('app', 'Delete success.'));
+        Yii::$app->getSession()->setFlash('success', Yii::t('tag', 'Delete success.'));
         return $this->redirect(['index']);
     }
 

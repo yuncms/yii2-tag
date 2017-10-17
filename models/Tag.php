@@ -8,12 +8,14 @@
 namespace yuncms\tag\models;
 
 use Yii;
+use yii\behaviors\AttributeBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 
 /**
  * Class Tag
+ * @property int $id
  * @property string $name
  * @property string $title
  * @property string $keywords
@@ -33,6 +35,34 @@ class Tag extends ActiveRecord
 
     // for gbk
     //public static $nameRegexp = '/^[\w._-\x80-\xff\#\+]+$/';
+
+    /**
+     * 定义行为
+     * @return array
+     */
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        $behaviors['slug'] = [
+            'class' => AttributeBehavior::className(),
+            'attributes' => [
+                ActiveRecord::EVENT_BEFORE_INSERT => ['slug']
+            ],
+            'value' => function ($event) {
+                return Inflector::slug($event->sender->name,'');
+            }
+        ];
+        $behaviors['slug'] = [
+            'class' => AttributeBehavior::className(),
+            'attributes' => [
+                ActiveRecord::EVENT_BEFORE_INSERT => ['slug']
+            ],
+            'value' => function ($event) {
+                return strtoupper(substr($event->sender->slug, 0, 1));
+            }
+        ];
+        return $behaviors;
+    }
 
     /**
      * @inheritdoc
@@ -87,18 +117,6 @@ class Tag extends ActiveRecord
             'slug' => Yii::t('tag', 'Slug'),
             'letter' => Yii::t('tag', 'Letter'),
         ];
-    }
-
-    /** @inheritdoc */
-    public function beforeSave($insert)
-    {
-        if (empty($this->slug)) {
-            $this->slug = Inflector::slug($this->name, '');
-        }
-        if (empty($this->letter)) {
-            $this->letter = strtoupper(substr($this->slug, 0, 1));
-        }
-        return parent::beforeSave($insert);
     }
 
     /**

@@ -15,17 +15,15 @@ class M161111091214Create_tag_table extends Migration
         }
 
         $this->createTable('{{%tag}}', [
-            'id' => $this->primaryKey(),
-            'name' => $this->string(50)->notNull()->unique(),
-            'title' => $this->string(150),
-            'keywords' => $this->string(255),
-            'description' => $this->text(),
-            'slug' => $this->string(80),
-            'letter' => $this->string(1),
-            'frequency' => $this->integer()->notNull()->defaultValue(0),
+            'id' => $this->primaryKey()->unsigned()->comment('ID'),
+            'name' => $this->string(50)->notNull()->unique()->comment('Tag'),
+            'title' => $this->string(150)->comment('Title'),
+            'keywords' => $this->string(255)->comment('Keywords'),
+            'description' => $this->text()->comment('Description'),
+            'slug' => $this->string(80)->comment('Slug'),
+            'letter' => $this->string(1)->comment('Letter'),
+            'frequency' => $this->integer()->notNull()->defaultValue(0)->comment('Frequency'),
         ], $tableOptions);
-
-
     }
 
     public function down()

@@ -9,7 +9,6 @@ namespace yuncms\tag\widgets;
 use Yii;
 use yii\base\Widget;
 use yuncms\tag\models\Tag;
-use yii\base\InvalidConfigException;
 
 /**
  * 获取热门tag

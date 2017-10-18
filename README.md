@@ -18,11 +18,10 @@ or add
 
 to the `require` section of your `composer.json` file.
 
+Url Rule
 ````
-//命名空间
-    'migrationNamespaces' => [
-        'yuncms\tag\migrations',
-    ],
+'topics' => 'tag/tag/index',
+'topics/<name:(.*)>' => 'tag/tag/view',
 ````
 
 ## License

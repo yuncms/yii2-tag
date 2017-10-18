@@ -33,6 +33,7 @@
         "class": "yuncms\\tag\\backend\\Module"
       },
       "frontend": {
+        "class": "yuncms\\tag\\frontend\\Module"
       }
     },
     "branch-alias": {

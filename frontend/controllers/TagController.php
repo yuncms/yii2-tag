@@ -55,7 +55,7 @@ class TagController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index'],
+                        'actions' => ['index', 'view'],
                         'roles' => ['@', '?']
                     ]
                 ],
@@ -80,6 +80,17 @@ class TagController extends Controller
         ]);
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * @param $name
+     * @return string
+     */
+    public function actionView($name)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($name),
         ]);
     }
 

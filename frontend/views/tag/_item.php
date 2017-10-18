@@ -1,15 +1,16 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+/** @var yuncms\tag\models\Tag $model */
 ?>
 
 <section class="topic-list-item col-md-3">
     <div class="widget-topic">
         <h2>
-            <a href="<?= Url::to(['/topic/index', 'tag' => $model->name]); ?>"><?= Html::encode($model->name) ?></a>
+            <a href="<?= Url::to(['/tag/tag/view', 'name' => $model->name]); ?>"><?= Html::encode($model->name) ?></a>
         </h2>
         <p>
-            <?= empty($model->description) ? Yii::t('app', 'No introduction') : Html::encode($model->description); ?>
+            <?= empty($model->description) ? Yii::t('tag', 'No introduction') : Html::encode($model->description); ?>
         </p>
         <div class="widget-topic-action">
             <?php
@@ -33,7 +34,7 @@ use yii\helpers\Html;
                 <?= $model->frequency; ?>
             </strong>
             <span class="text-muted">
-                <?= Yii::t('app', 'follows') ?>
+                <?= Yii::t('tag', 'follows') ?>
             </span>
         </div>
     </div>

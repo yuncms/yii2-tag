@@ -9,20 +9,20 @@ class M170204083513Add_backend_menu extends Migration
     public function up()
     {
         $this->batchInsert('{{%admin_menu}}', [ 'name', 'parent', 'route', 'icon', 'sort', 'data'], [
-            ['Tag管理', 8, '/tag/tag/index', 'fa-book', NULL, NULL],
+            ['TAG管理', 8, '/tag/tag/index', 'fa-book', NULL, NULL],
         ]);
 
-        $id = (new \yii\db\Query())->select(['id'])->from('{{%admin_menu}}')->where(['name' => 'Tag管理', 'parent' => 8,])->scalar($this->getDb());
+        $id = (new \yii\db\Query())->select(['id'])->from('{{%admin_menu}}')->where(['name' => 'TAG管理', 'parent' => 8,])->scalar($this->getDb());
 
         $this->batchInsert('{{%admin_menu}}', ['name', 'parent', 'route', 'visible', 'sort'], [
-            ['创建Tag', $id, '/tag/tag/create', 0, NULL],
-            ['更新Tag', $id, '/tag/tag/update', 0, NULL],
+            ['创建TAG', $id, '/tag/tag/create', 0, NULL],
+            ['更新TAG', $id, '/tag/tag/update', 0, NULL],
         ]);
     }
 
     public function down()
     {
-        $id = (new \yii\db\Query())->select(['id'])->from('{{%admin_menu}}')->where(['name' => 'Tag管理', 'parent' => 8,])->scalar($this->getDb());
+        $id = (new \yii\db\Query())->select(['id'])->from('{{%admin_menu}}')->where(['name' => 'TAG管理', 'parent' => 8,])->scalar($this->getDb());
         $this->delete('{{%admin_menu}}', ['parent' => $id]);
         $this->delete('{{%admin_menu}}', ['id' => $id]);
     }

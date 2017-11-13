@@ -34,7 +34,7 @@ class TagSearch extends Model
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('tag', 'Tag'),
+            'name' => Yii::t('tag', 'TAG'),
             'frequency' => Yii::t('tag', 'Frequency'),
         ];
     }

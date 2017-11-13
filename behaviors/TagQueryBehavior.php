@@ -7,8 +7,7 @@
 
 namespace yuncms\tag\behaviors;
 
-use yii\base\Behavior;
-use yii\db\Expression;
+use creocoder\taggable\TaggableQueryBehavior;
 
 /**
  * TagQueryBehavior
@@ -19,51 +18,7 @@ use yii\db\Expression;
  * @see https://github.com/creocoder/yii2-taggable
  * @author Alexander Kochetov <creocoder@gmail.com>
  */
-class TagQueryBehavior extends Behavior
+class TagQueryBehavior extends TaggableQueryBehavior
 {
-    /**
-     * Gets entities by any tags.
-     * @param string|string[] $values
-     * @param string|null $attribute
-     * @return \yii\db\ActiveQuery the owner
-     */
-    public function anyTagValues($values, $attribute = null)
-    {
-        /** @var \yii\db\ActiveRecord $model */
-        $model = new $this->owner->modelClass();
-        $tagClass = $model->getRelation($model->tagRelation)->modelClass;
 
-        $this->owner
-            ->innerJoinWith($model->tagRelation, false)
-            ->andWhere([$tagClass::tableName() . '.' . ($attribute ?: $model->tagValueAttribute) => $model->filterTagValues($values)])
-            ->addGroupBy(array_map(function ($pk) use ($model) {
-                return $model->tableName() . '.' . $pk;
-            }, $model->primaryKey()));
-
-        return $this->owner;
-    }
-
-    /**
-     * Gets entities by all tags.
-     * @param string|string[] $values
-     * @param string|null $attribute
-     * @return \yii\db\ActiveQuery the owner
-     */
-    public function allTagValues($values, $attribute = null)
-    {
-        $model = new $this->owner->modelClass();
-
-        return $this->anyTagValues($values, $attribute)->andHaving(new Expression('COUNT(*) = ' . count($model->filterTagValues($values))));
-    }
-
-    /**
-     * Gets entities related by tags.
-     * @param string|string[] $values
-     * @param string|null $attribute
-     * @return \yii\db\ActiveQuery the owner
-     */
-    public function relatedByTagValues($values, $attribute = null)
-    {
-        return $this->anyTagValues($values, $attribute)->addOrderBy(new Expression('COUNT(*) DESC'));
-    }
 }
